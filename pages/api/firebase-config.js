@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,9 +15,12 @@ const firebaseConfig = {
   storageBucket: "bruin-subleasing.appspot.com",
   messagingSenderId: "936967157902",
   appId: "1:936967157902:web:80c1373b78c31f4e1df1df",
-  measurementId: "G-35DDV6E9GL"
+  measurementId: "G-35DDV6E9GL",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Exports for use Throughout App
+export const auth = getAuth(app);
+export const db = getFirestore(app);
