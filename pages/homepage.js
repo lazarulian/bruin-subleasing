@@ -8,8 +8,8 @@ function homepage() {
   return (
     <div>
       <Hero />
-      <Supportpage />
       <Infotab />
+      <Supportpage />
     </div>
   );
 }
