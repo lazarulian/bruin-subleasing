@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@heroicons/react": "^2.0.16",
+    "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.10",
     "@next/font": "13.1.6",
     "eslint": "8.34.0",

@@ -23,7 +23,7 @@ const Navbar = () => {
             <Link href="/browse">
               <li className="p-4"> Browse </li>
             </Link>
-            <Link href="/admins/users">
+            <Link href="/admin/users">
               <li className="p-4"> Users </li>
             </Link>
             <Link href="/listings">
