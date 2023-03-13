@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+import React, {useState} from 'react'
+import Hero from '@/components/Hero'
+import Navbar from '@/components/Navbar'
+import Infotab from '@/components/Infotab'
+
 
 function homepage() {
   return (
     <div>
       <Hero />
+      <Infotab />
     </div>
   );
 }
