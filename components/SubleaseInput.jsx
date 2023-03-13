@@ -60,7 +60,7 @@ const SubleaseInput = () => {
       baths: parseInt(numBath),
       beds: parseInt(numBed),
       quarter: newQuarter,
-      imageURL: imageURL
+      imageurl: imageURL
     });
   };
 
