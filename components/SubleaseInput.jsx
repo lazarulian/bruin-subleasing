@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { db } from "../pages/api/firebase-config";
 import { collection, getDocs, addDoc, where, query } from "firebase/firestore";
+import { storage } from 'firebase/storage';
 import TextField from "@mui/material/TextField";
 import Input from '@mui/material/Input';
 
@@ -8,7 +9,15 @@ import Input from '@mui/material/Input';
 
 const handleImageUpload = (event) => {
   const imageFile = event.target.files[0];
-  // Do something with the uploaded image file
+  var storageRef = storage().ref().child(images)
+
+  storageRef.getDownloadURL().then(function(url) {
+    setImageURL(url)
+    console.log(url)
+  }
+  ).catch(function(error) {
+    // pass
+  });
 };
 
 
@@ -22,6 +31,20 @@ const SubleaseInput = () => {
   const [numBed, setNumBed] = useState("");
   const [numBath, setNumBath] = useState("");
   const [newQuarter, setNewQuarter] = useState("");
+  const [imageURL, setImageURL] = useState("")
+
+  const clearInput = () => {
+    setNewAddress("")
+    setNewRating(NaN)
+    setNewRent(0)
+    setNewYear(NaN)
+    setNewStreetName("")
+    setNumBed("")
+    setNumBath("")
+    setNewQuarter("")
+    setImageURL("")
+  }
+  
 
    { /* const convertInt = (data) => {
     return parseInt(data);
@@ -36,7 +59,8 @@ const SubleaseInput = () => {
       streetname: newStreetName,
       baths: parseInt(numBath),
       beds: parseInt(numBed),
-      quarter: newQuarter
+      quarter: newQuarter,
+      imageURL: imageURL
     });
   };
 
@@ -125,7 +149,7 @@ const SubleaseInput = () => {
         }}
       />
 
-      <Input
+      {/* <Input 
         className="rounded-lg border-2 p-2 m-2.5 "
         type="file"
         placeholder="insert an image"
@@ -133,7 +157,18 @@ const SubleaseInput = () => {
         accept="image/*"
         optional
         onChange={handleImageUpload}
-      />  
+      />  */}
+      
+      <TextField
+        className="rounded-lg border-2 border-blue-400 p-2 m-1"
+        type="number"
+        placeholder="2"
+        label="Image URL"
+        required
+        onChange={(event) => {
+          setImageURL(event.target.value);
+        }}
+      />
      
       <button
         className="bg-blue-100 rounded-md p-3 m-2 hover:bg-blue-600 hover:text-white duration-200"
@@ -141,6 +176,14 @@ const SubleaseInput = () => {
       > 
         Create Sublease
       </button>
+      
+      <button
+        className="bg-blue-100 rounded-md p-3 m-2 hover:bg-blue-600 hover:text-white duration-200"
+        onClick={clearInput}
+      > 
+        Clear Input
+      </button>
+     
     </div>
   );
 };

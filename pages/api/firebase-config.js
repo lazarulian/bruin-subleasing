@@ -16,11 +16,12 @@ const firebaseConfig = {
   storageBucket: "bruin-subleasing.appspot.com",
   messagingSenderId: "936967157902",
   appId: "1:936967157902:web:80c1373b78c31f4e1df1df",
-  measurementId: "G-35DDV6E9GL"
+  measurementId: "G-35DDV6E9GL",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
