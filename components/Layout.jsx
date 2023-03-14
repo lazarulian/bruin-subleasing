@@ -1,15 +1,16 @@
 import React from "react";
 import { UseAuth } from "@/context/AuthContext";
-import Navbar from "./Navbar";
+import Guard from "./login/Guard";
+import NavUpdated from "./NavUpdated";
 
 const Layout = ({ children }) => {
   const { currentUser } = UseAuth();
   return (
     <div>
-      <Navbar />
+      <NavUpdated />
       <p>Currently logged in as: &nbsp;{currentUser && currentUser.email}</p>
       <p>UID: &nbsp;{currentUser && currentUser.uid}</p>
-      <div>{children}</div>
+      <Guard>{children}</Guard>
     </div>
   );
 };

@@ -22,7 +22,6 @@ const LoginForm = () => {
         setErrormessage("Incorrect email or password");
       }
     }
-    await signup(Email, Password);
   }
 
   return (
