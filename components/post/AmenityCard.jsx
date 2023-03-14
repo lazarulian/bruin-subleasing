@@ -8,8 +8,8 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 
 const AmenityCard = ({ ac, pool, parking, laundry, fitness, wifi }) => {
   return (
-    <div className="rounded-lg border-2 drop-shadow-md mx-auto mr-0 h-72 w-96 bg-slate-50 hover:bg-slate-100 duration-300 ease-in-out text-center">
-      <p className="pt-5 pb-7 text-xl"> Amenities </p>
+    <div className="rounded-lg border-2 drop-shadow-md mx-auto mr-0 h-72 w-96 bg-slate-50 hover:scale-105 duration-300 ease-in-out text-center">
+      <p className="pt-5 pb-2 text-2xl underline"> Amenities </p>
       {ac && (
         <div className="flex flex-row ml-28">
           <AcUnitIcon className="h-6 w-6"> </AcUnitIcon>
