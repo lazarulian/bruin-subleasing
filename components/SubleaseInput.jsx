@@ -59,8 +59,8 @@ const SubleaseInput = () => {
       streetname: newStreetName,
       baths: parseInt(numBath),
       beds: parseInt(numBed),
-      quarter: newQuarter,
-      imageURL: imageURL
+      imageurl: imageURL,
+      quarter: newQuarter
     });
   };
 
