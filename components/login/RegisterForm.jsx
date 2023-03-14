@@ -18,6 +18,7 @@ const RegisterForm = () => {
   const [uid, setUid] = useState(null);
   const [avatar, setAvatar] = useState("");
   const [Errormessage, setErrormessage] = useState(null);
+  const [ConfirmMessage, setConfirmMessage] = useState(null);
   const [signingUp, setsigningUp] = useState(true);
 
   // Authentication Functions
@@ -43,6 +44,7 @@ const RegisterForm = () => {
       try {
         await signup(Email, Password).then((response) => {
           setUid(response.user.uid);
+          setConfirmMessage("Successfully registered your account!");
         });
       } catch (err) {
         if (err.code == "auth/email-already-in-use") {
@@ -168,6 +170,9 @@ const RegisterForm = () => {
             </div>
             {Errormessage && (
               <p className="text-red-400 text-xs italic">{Errormessage}</p>
+            )}
+            {ConfirmMessage && (
+              <p className="text-green-400 text-xs italic">{ConfirmMessage}</p>
             )}
             <button
               type="submit"

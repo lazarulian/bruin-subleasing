@@ -5,6 +5,7 @@ const LoginForm = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Errormessage, setErrormessage] = useState(null);
+  const [ConfirmMessage, setConfirmMessage] = useState(null);
   const [IsLoggingIn, setIsLoggingIn] = useState(true);
 
   const { login } = UseAuth();
@@ -15,7 +16,9 @@ const LoginForm = () => {
     }
     if (IsLoggingIn) {
       try {
-        await login(Email, Password);
+        await login(Email, Password).then(() => {
+          setConfirmMessage("Successfully Logged in!");
+        });
       } catch (err) {
         setErrormessage("Incorrect email or password");
       }
@@ -64,6 +67,9 @@ const LoginForm = () => {
             />
             {Errormessage && (
               <p className="text-red-400 text-xs italic">{Errormessage}</p>
+            )}
+            {ConfirmMessage && (
+              <p className="text-green-400 text-xs italic">{ConfirmMessage}</p>
             )}
           </div>
           <div className="flex items-center justify-between">
