@@ -2,18 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { UseAuth } from "@/context/AuthContext";
 import { redirect } from "next/navigation";
-import LoginForm from "./LoginForm";
+import LoginRegister from "./LoginRegister";
 
 const Guard = ({ children }) => {
   // Authentication Functions
-  const { signup, currentUser } = UseAuth();
+  const { currentUser } = UseAuth();
 
   if (currentUser) {
     return <div>{children}</div>;
   } else {
     return (
       <div>
-        <LoginForm />
+        <LoginRegister />
       </div>
     );
   }
