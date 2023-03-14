@@ -7,11 +7,9 @@ const LoginForm = () => {
   const [Errormessage, setErrormessage] = useState(null);
   const [IsLoggingIn, setIsLoggingIn] = useState(true);
 
-  const { login, signup, currentUser } = UseAuth();
+  const { login } = UseAuth();
 
-  console.log(currentUser);
-
-  async function submitHandler() {
+  async function loginSubmitHandler() {
     if (!Email || !Password) {
       setErrormessage("Please enter username and password.");
     }
@@ -49,7 +47,7 @@ const LoginForm = () => {
               />
             </div>
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
               className="block mb-2 text-sm font-medium  text-white"
               for="password"
@@ -65,14 +63,14 @@ const LoginForm = () => {
               placeholder="Password"
             />
             {Errormessage && (
-              <p class="text-red-400 text-xs italic">{Errormessage}</p>
+              <p className="text-red-400 text-xs italic">{Errormessage}</p>
             )}
           </div>
-          <div class="flex items-center justify-between">
+          <div className="flex items-center justify-between">
             <button
               className="w-full text-white bg-gray-600 hover:bg-gray-300 hover:text-black duration-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
               type="button"
-              onClick={() => submitHandler()}
+              onClick={() => loginSubmitHandler()}
             >
               Sign In
             </button>

@@ -1,12 +1,11 @@
 import React from "react";
-import Guard from "./login/Guard";
 import NavUpdated from "./NavUpdated";
 
 const Layout = ({ children }) => {
   return (
     <div>
       <NavUpdated />
-      <Guard>{children}</Guard>
+      <div>{children}</div>
     </div>
   );
 };

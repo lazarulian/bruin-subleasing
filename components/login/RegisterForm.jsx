@@ -1,15 +1,13 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { UseAuth } from "@/context/AuthContext";
 import { db } from "@/pages/api/firebase-config";
-import { collection, getDocs, addDoc, where, query } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 const RegisterForm = () => {
   // The Registration form for Adding Users to Firebase Auth and Firebase UserBase
   // Firebase Storage Information
-  const apartmentsCollectionRef = collection(db, "users");
+  const userCollectionRef = collection(db, "users");
 
   // UseState Snippets
   const [Email, setEmail] = useState("");
@@ -18,19 +16,21 @@ const RegisterForm = () => {
   const [LastName, setLastName] = useState("");
   const [Phone, setPhone] = useState("");
   const [uid, setUid] = useState(null);
+  const [avatar, setAvatar] = useState("");
   const [Errormessage, setErrormessage] = useState(null);
   const [signingUp, setsigningUp] = useState(true);
 
   // Authentication Functions
-  const { signup, currentUser } = UseAuth();
+  const { signup } = UseAuth();
 
   async function updateUserInformation() {
-    await addDoc(apartmentsCollectionRef, {
+    await addDoc(userCollectionRef, {
       email: Email,
       firstname: FirstName,
       lastname: LastName,
       phonenumber: Phone,
       uid: uid,
+      avatar: avatar,
     });
   }
 
@@ -55,7 +55,6 @@ const RegisterForm = () => {
   useEffect(() => {
     if (uid != null) {
       updateUserInformation();
-      console.log(uid);
     }
   }, [uid]);
 
@@ -66,7 +65,6 @@ const RegisterForm = () => {
           <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white">
             Create an account
           </h1>
-
           <div className="space-y-4 md:space-y-6">
             <div>
               <label
@@ -149,6 +147,22 @@ const RegisterForm = () => {
                 onChange={(e) => setPhone(e.target.value)}
                 id="phonenumber"
                 placeholder="310-435-2198"
+                className=" border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="avatar"
+                className="block mb-2 text-sm font-medium  text-white"
+              >
+                Profile Picture URL:
+              </label>
+              <input
+                type="text"
+                value={avatar}
+                onChange={(e) => setAvatar(e.target.value)}
+                id="avatar"
+                placeholder="https://google.com/img.jpeg"
                 className=" border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
