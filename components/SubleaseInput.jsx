@@ -124,7 +124,7 @@ const SubleaseInput = () => {
       />
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
-        type="number"
+        type="text"
         placeholder="2"
         label="Image URL"
         id="URL"
