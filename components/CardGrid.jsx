@@ -15,8 +15,8 @@ const CardGrid = () => {
       const querySnapshot = await getDocs(apartmentsRef);
       const apartmentData = querySnapshot.docs.map((doc) => doc.data());
       setApartments(apartmentData);
+      console.log(apartmentData);
     };
-
     getApartments();
   }, []);
 

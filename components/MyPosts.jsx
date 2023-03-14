@@ -16,7 +16,13 @@ const MyPosts = () => {
         where("uid", "==", currentUser.uid)
       );
       const data = await getDocs(q);
-      setApartments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const d_apartments = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      const ids = new Set(d_apartments.map((elem) => elem["uid"]));
+      console.log(ids);
+      setApartments(d_apartments);
     };
     getApartments();
   }, []);

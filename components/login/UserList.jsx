@@ -1,4 +1,5 @@
 import UserComponent from "@/components/login/UserComponent";
+import ProfileInformation from "./ProfileInformation";
 import React from "react";
 import { useEffect, useState } from "react";
 import { db } from "@/pages/api/firebase-config";
@@ -18,15 +19,16 @@ const UserList = () => {
 
   console.log(users);
   return (
-    <div>
+    <div className="max-w-5xl mx-auto grid md:grid-cols-4 grid-cols-1 gap-4">
       {users &&
-        users.map((user) => (
-          <UserComponent
-            key={0}
-            firstname={user.firstname}
-            lastname={user.lastname}
+        users.map((user, idx) => (
+          <ProfileInformation
+            key={idx}
+            fname={user.firstname}
+            lname={user.lastname}
             email={user.email}
-            phonenumber={user.phonenumber}
+            phone={user.phonenumber}
+            avatar={user.avatar}
           />
         ))}
     </div>
