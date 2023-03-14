@@ -20,19 +20,7 @@ function classNames(...classes) {
 
 export default function NavUpdated() {
   const { currentUser, logout } = UseAuth();
-
   const [user, setUser] = useState([]);
-
-  async function updateUserInformation() {
-    await addDoc(userCollectionRef, {
-      email: Email,
-      firstname: FirstName,
-      lastname: LastName,
-      phonenumber: Phone,
-      uid: uid,
-      avatar: avatar,
-    });
-  }
 
   useEffect(() => {
     const getApartments = async () => {
@@ -140,26 +128,26 @@ export default function NavUpdated() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              href="/admin/users"
+                              href="/mylistings"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Your Profile
+                              Your Listings
                             </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              href=""
+                              href="/admin/users"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Settings
+                              All Users
                             </Link>
                           )}
                         </Menu.Item>
