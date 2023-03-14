@@ -1,4 +1,4 @@
-import Post from "@/components/Post";
+import Post from "@/components/post/Post";
 import React from "react";
 import posts from "@/data/posts";
 
@@ -12,8 +12,10 @@ const Browse = () => {
               title={post.title}
               description={post.information}
               image={post.imgSrc}
-            />
-            <br></br>
+              poster={post.poster}
+              timeframe={post.quartersAvailable}
+              amenities={post.amenities}
+            ></Post>
           </div>
         ))}
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import AmenityCard from "./AmenityCard";
+import UserComponent from "../login/UserComponent";
 
 const Post = ({ title, image, poster, timeframe, description, amenities }) => {
   return (
@@ -13,7 +14,7 @@ const Post = ({ title, image, poster, timeframe, description, amenities }) => {
           alt="cheeks"
           width={892}
           height={700}
-          className="mx-auto pb-10 drop-shadow-md opacity-90 transition duration-300 ease-in-out hover:opacity-100 rounded-xl"
+          className="mx-auto pb-10 drop-shadow-md hover:scale-105 duration-300 ease-in-out rounded-xl"
         />
         <div className=" border-t dark:border-gray-300 "></div>
 
@@ -24,7 +25,14 @@ const Post = ({ title, image, poster, timeframe, description, amenities }) => {
 
         <div className=" grid grid-cols-2">
           <div>
-            <p className="text-left indent-5 pt-5">{description}</p>
+            <p className="text-left indent-5 ">{description}</p>
+            <br></br>
+            <UserComponent
+              firstname={"Ayesha"}
+              lastname={"Alvi"}
+              phonenumber={"(894)-758-9923"}
+              email={"test@gmail.com"}
+            ></UserComponent>
           </div>
           <div>
             <AmenityCard
