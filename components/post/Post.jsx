@@ -2,20 +2,7 @@ import React from "react";
 import Image from "next/image";
 import AmenityCard from "./AmenityCard";
 
-const Post = ({
-  title,
-  image,
-  poster,
-  timeframe,
-  description,
-  /*amenities*/
-  ac,
-  pool,
-  parking,
-  laundry,
-  fitness,
-  wifi,
-}) => {
+const Post = ({ title, image, poster, timeframe, description, amenities }) => {
   return (
     <div className="max-w-4xl py-10 mx-auto dark:text-gray-800 ">
       <div className="text-left font-semibold ml-0">
@@ -41,12 +28,12 @@ const Post = ({
           </div>
           <div>
             <AmenityCard
-              ac={ac}
-              pool={pool}
-              parking={parking}
-              laundry={laundry}
-              fitness={fitness}
-              wifi={wifi}
+              ac={amenities.ac}
+              pool={amenities.pool}
+              parking={amenities.parking}
+              laundry={amenities.laundry}
+              fitness={amenities.fitness}
+              wifi={amenities.wifi}
             />
           </div>
         </div>
