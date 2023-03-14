@@ -1,27 +1,30 @@
 import { React, useState, useEffect } from "react";
 import { db } from "../pages/api/firebase-config";
 import { collection, getDocs, addDoc, where, query } from "firebase/firestore";
-import { storage } from 'firebase/storage';
+import { storage } from "firebase/storage";
 import TextField from "@mui/material/TextField";
-import Input from '@mui/material/Input';
-
-
+import Input from "@mui/material/Input";
+import { UseAuth } from "@/context/AuthContext";
 
 const handleImageUpload = (event) => {
   const imageFile = event.target.files[0];
-  var storageRef = storage().ref().child(images)
+  var storageRef = storage().ref().child(images);
 
-  storageRef.getDownloadURL().then(function(url) {
-    setImageURL(url)
-    console.log(url)
-  }
-  ).catch(function(error) {
-    // pass
-  });
+  storageRef
+    .getDownloadURL()
+    .then(function (url) {
+      setImageURL(url);
+      console.log(url);
+    })
+    .catch(function (error) {
+      // pass
+    });
 };
 
-
 const SubleaseInput = () => {
+  // Authorization Information
+  const { currentUser } = UseAuth();
+
   const apartmentsCollectionRef = collection(db, "apartments");
   const [newAddress, setNewAddress] = useState("");
   const [newRating, setNewRating] = useState(0);
@@ -31,33 +34,34 @@ const SubleaseInput = () => {
   const [numBed, setNumBed] = useState("");
   const [numBath, setNumBath] = useState("");
   const [newQuarter, setNewQuarter] = useState("");
-  const [imageURL, setImageURL] = useState("")
+  const [imageURL, setImageURL] = useState("");
 
   const clearInput = () => {
-    setNewAddress("")
-    setNewRating(NaN)
-    setNewRent(0)
-    setNewYear(NaN)
-    setNewStreetName("")
-    setNumBed("")
-    setNumBath("")
-    setNewQuarter("")
-    setImageURL("")
-    document.getElementById('apartment').value = "";
-    document.getElementById('rent').value = "";
-    document.getElementById('quarter').value = "";
-    document.getElementById('year').value = "";
-    document.getElementById('rating').value = "";
-    document.getElementById('street-name').value = "";
-    document.getElementById('beds').value = "";
-    document.getElementById('baths').value = "";
-    document.getElementById('URL').value = "";
-  }
+    setNewAddress("");
+    setNewRating(NaN);
+    setNewRent(0);
+    setNewYear(NaN);
+    setNewStreetName("");
+    setNumBed("");
+    setNumBath("");
+    setNewQuarter("");
+    setImageURL("");
+    document.getElementById("apartment").value = "";
+    document.getElementById("rent").value = "";
+    document.getElementById("quarter").value = "";
+    document.getElementById("year").value = "";
+    document.getElementById("rating").value = "";
+    document.getElementById("street-name").value = "";
+    document.getElementById("beds").value = "";
+    document.getElementById("baths").value = "";
+    document.getElementById("URL").value = "";
+  };
 
-
-   { /* const convertInt = (data) => {
+  {
+    /* const convertInt = (data) => {
     return parseInt(data);
-  }; */}
+  }; */
+  }
 
   const createApartment = async () => {
     await addDoc(apartmentsCollectionRef, {
@@ -69,13 +73,14 @@ const SubleaseInput = () => {
       baths: parseInt(numBath),
       beds: parseInt(numBed),
       quarter: newQuarter,
-      imageurl: imageURL
+      imageurl: imageURL,
+      uid: currentUser.uid,
     });
   };
 
   return (
-    <div className="grid grid-cols-1 m-8 p-8 .bg-gray-500 gap-3" >
-       <h1 class="text-4xl m-3 font-bold text-center"> Add a sublease here: </h1>
+    <div className="grid grid-cols-1 m-8 p-8 .bg-gray-500 gap-3">
+      <h1 class="text-4xl m-3 font-bold text-center"> Add a sublease here: </h1>
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         placeholder="558 Glenrock Ave"
@@ -175,7 +180,7 @@ const SubleaseInput = () => {
         optional
         onChange={handleImageUpload}
       />  */}
-      
+
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         type="number"
@@ -187,21 +192,20 @@ const SubleaseInput = () => {
           setImageURL(event.target.value);
         }}
       />
-     
+
       <button
         className="bg-blue-100 rounded-md p-3 m-2 hover:bg-blue-600 hover:text-white duration-200"
         onClick={createApartment}
-      > 
+      >
         Create Sublease
       </button>
-      
+
       <button
         className="bg-blue-100 rounded-md p-3 m-2 hover:bg-blue-600 hover:text-white duration-200"
         onClick={clearInput}
-      > 
+      >
         Clear Input
       </button>
-     
     </div>
   );
 };
