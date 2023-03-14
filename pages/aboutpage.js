@@ -4,7 +4,7 @@ import{ShieldCheckIcon, AcademicCapIcon} from '@heroicons/react/24/solid'
 import Image from "next/image";
 import supImg from '../public/static/images/gaileyheights.jpg'
 
-function about () {
+function aboutpage () {
   return (
     <div className='w-full h-full mt-3'>
         <div className='w-screen h=screen absolute'>
@@ -57,4 +57,4 @@ function about () {
   );
 }
 
-export default about;
+export default aboutpage;
