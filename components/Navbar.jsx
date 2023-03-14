@@ -38,7 +38,6 @@ const Navbar = () => {
             <Link href="/listings">
               <li className="p-4  hover:text-yellow-200 hover:underline"> Listings </li>
             </Link>
-
           </ul>
         </div>
 
