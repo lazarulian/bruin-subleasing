@@ -7,11 +7,9 @@ const LoginForm = () => {
   const [Errormessage, setErrormessage] = useState(null);
   const [IsLoggingIn, setIsLoggingIn] = useState(true);
 
-  const { login, signup, currentUser } = UseAuth();
+  const { login } = UseAuth();
 
-  console.log(currentUser);
-
-  async function submitHandler() {
+  async function loginSubmitHandler() {
     if (!Email || !Password) {
       setErrormessage("Please enter username and password.");
     }
@@ -26,50 +24,57 @@ const LoginForm = () => {
 
   return (
     <div>
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-        <div class="mb-4">
-          <label
-            class="block text-grey-darker text-sm font-bold mb-2"
-            for="email"
-          >
-            Email
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-            id="email"
-            type="text"
-            value={Email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Address"
-          />
-        </div>
-        <div class="mb-6">
-          <label
-            class="block text-grey-darker text-sm font-bold mb-2"
-            for="password"
-          >
-            Password
-          </label>
-          <input
-            class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-            id="password"
-            value={Password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-          />
-          {Errormessage && (
-            <p class="text-red-400 text-xs italic">{Errormessage}</p>
-          )}
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            class="duration-500 bg-slate-600 hover:bg-slate-100 hover:text-black text-white font-bold py-2 px-4 rounded"
-            type="button"
-            onClick={() => submitHandler()}
-          >
-            Sign In
-          </button>
+      <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white">
+            Log In
+          </h1>
+          <div>
+            <div>
+              <label
+                className="block mb-2 text-sm font-medium  text-white"
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                className=" border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                id="email"
+                type="text"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email Address"
+              />
+            </div>
+          </div>
+          <div className="mb-6">
+            <label
+              className="block mb-2 text-sm font-medium  text-white"
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              className=" border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              id="password"
+              value={Password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+            />
+            {Errormessage && (
+              <p className="text-red-400 text-xs italic">{Errormessage}</p>
+            )}
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              className="w-full text-white bg-gray-600 hover:bg-gray-300 hover:text-black duration-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
+              type="button"
+              onClick={() => loginSubmitHandler()}
+            >
+              Sign In
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,12 +1,11 @@
-import RegisterForm from "@/components/login/RegisterForm";
 import React from "react";
+import RegisterForm from "@/components/login/RegisterForm";
+import LoginRegister from "@/components/login/LoginRegister";
 
 const register = () => {
   return (
     <div>
-      <section class="bg-gray-50 dark:bg-gray-900">
-        <RegisterForm />
-      </section>
+      <LoginRegister />
     </div>
   );
 };
