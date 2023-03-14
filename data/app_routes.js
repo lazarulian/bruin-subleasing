@@ -3,7 +3,7 @@ const app_routes = {
   index: "/",
   browse: "/browse",
   listings: "/listings",
-  sublease: "/sublease",
+  sublease: "/add-sublease",
   register: "/register",
 };
 export default app_routes;

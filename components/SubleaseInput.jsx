@@ -1,25 +1,9 @@
 import { React, useState, useEffect } from "react";
 import { db } from "../pages/api/firebase-config";
-import { collection, getDocs, addDoc, where, query } from "firebase/firestore";
-import { storage } from "firebase/storage";
+import { collection, addDoc } from "firebase/firestore";
 import TextField from "@mui/material/TextField";
 import Input from "@mui/material/Input";
 import { UseAuth } from "@/context/AuthContext";
-
-const handleImageUpload = (event) => {
-  const imageFile = event.target.files[0];
-  var storageRef = storage().ref().child(images);
-
-  storageRef
-    .getDownloadURL()
-    .then(function (url) {
-      setImageURL(url);
-      console.log(url);
-    })
-    .catch(function (error) {
-      // pass
-    });
-};
 
 const SubleaseInput = () => {
   // Authorization Information
@@ -27,10 +11,8 @@ const SubleaseInput = () => {
 
   const apartmentsCollectionRef = collection(db, "apartments");
   const [newAddress, setNewAddress] = useState("");
-  const [newRating, setNewRating] = useState(0);
   const [newRent, setNewRent] = useState(0);
   const [newYear, setNewYear] = useState(0);
-  const [newStreetName, setNewStreetName] = useState("");
   const [numBed, setNumBed] = useState("");
   const [numBath, setNumBath] = useState("");
   const [newQuarter, setNewQuarter] = useState("");
@@ -57,19 +39,11 @@ const SubleaseInput = () => {
     document.getElementById("URL").value = "";
   };
 
-  {
-    /* const convertInt = (data) => {
-    return parseInt(data);
-  }; */
-  }
-
   const createApartment = async () => {
     await addDoc(apartmentsCollectionRef, {
       address: newAddress,
-      rating: parseInt(newRating),
       rent: parseInt(newRent),
       year: parseInt(newYear),
-      streetname: newStreetName,
       baths: parseInt(numBath),
       beds: parseInt(numBed),
       quarter: newQuarter,
@@ -115,7 +89,6 @@ const SubleaseInput = () => {
           setNewQuarter(event.target.value);
         }}
       />
-
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         type="number"
@@ -125,27 +98,6 @@ const SubleaseInput = () => {
         required
         onChange={(event) => {
           setNewYear(event.target.value);
-        }}
-      />
-      <TextField
-        className="rounded-lg border-2 border-blue-400 p-2 m-1"
-        type="number"
-        placeholder="4"
-        label="Rating"
-        id="rating"
-        required
-        onChange={(event) => {
-          setNewRating(parseInt(event.target.value));
-        }}
-      />
-      <TextField
-        className="rounded-lg border-2 border-blue-400 p-2 m-1"
-        placeholder="Glenrock"
-        label="Street Name"
-        id="street-name"
-        required
-        onChange={(event) => {
-          setNewStreetName(event.target.value.toLowerCase());
         }}
       />
       <TextField
@@ -170,17 +122,6 @@ const SubleaseInput = () => {
           setNumBath(parseInt(event.target.value));
         }}
       />
-
-      {/* <Input 
-        className="rounded-lg border-2 p-2 m-2.5 "
-        type="file"
-        placeholder="insert an image"
-        label="put image here"
-        accept="image/*"
-        optional
-        onChange={handleImageUpload}
-      />  */}
-
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         type="number"
