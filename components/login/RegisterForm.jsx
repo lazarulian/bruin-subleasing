@@ -43,7 +43,6 @@ const RegisterForm = () => {
       try {
         await signup(Email, Password).then((response) => {
           setUid(response.user.uid);
-          console.log(response.user.uid);
         });
       } catch (err) {
         if (err.code == "auth/email-already-in-use") {
@@ -180,12 +179,12 @@ const RegisterForm = () => {
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
-                <a
+                <Link
                   href="/login"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Login here
-                </a>
+                </Link>
               </p>
             </div>
           </div>
