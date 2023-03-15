@@ -10,6 +10,12 @@ const Browse = () => {
           <div key={idx}>
             <Post
               title={post.title}
+              datePosted={post.datePosted}
+              rent={post.rent}
+              bed={post.bed}
+              bath={post.bath}
+              squareFeet={post.squareFeet}
+              roomates={post.roomates}
               description={post.information}
               image={post.imgSrc}
               timeframe={post.quartersAvailable}
