@@ -9,7 +9,7 @@ import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
 
 const navigation = [
   { name: "Home", href: "/homepage", current: false },
-  { name: "Browse", href: "/browse", current: false },
+  { name: "Add Sublease", href: "/add-sublease", current: false },
   { name: "Listings", href: "/listings", current: false },
   { name: "About", href: "/about", current: false },
 ];
