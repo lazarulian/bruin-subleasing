@@ -1,6 +1,14 @@
 import React from "react";
 
-const Card = ({ address, bedrooms, bathrooms, price, imageUrl, season }) => {
+const Card = ({
+  address,
+  bedrooms,
+  bathrooms,
+  price,
+  imageUrl,
+  season,
+  uid,
+}) => {
   return (
     <div className="w-full h-75 rounded-lg shadow-md overflow-hidden">
       <img
