@@ -5,6 +5,9 @@ const ProfileInformation = ({ fname, lname, phone, email, avatar }) => {
   return (
     <div class="p-5 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div class="flex flex-col items-center pb-5">
+        <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white pb-3 text-center">
+          Contact Information
+        </h1>
         <img
           class="w-24 h-24 mb-3 rounded-full shadow-lg"
           src={avatar}

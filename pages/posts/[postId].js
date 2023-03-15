@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Post from "@/components/Post";
 
 function individualPost() {
   const router = useRouter();
