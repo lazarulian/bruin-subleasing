@@ -25,15 +25,24 @@ const Hero = () => {
 
                 {/*Bottom Most Border: div contains Border Outline*/}
                 <div className=' mt-4 absolute flex flex-col py-4 md:min-w-[760px] bottom-[5%]
-                mx-1 md:left-1/2 transform md:-translate-x-1/2 bg-gray-900 
-                border border-slate-300 rounded-xl text-center shadow-xl'>
-                    <p className='text-white'>Leasing Services</p>
+                                mx-1 md:left-1/2 transform md:-translate-x-1/2 bg-gray-900 
+                                border border-slate-300 rounded-xl text-center shadow-xl'>
+                    <p className='text-white mb-4 text-xl'>Our Leasing Services</p>
 
                     {/*Assigning Icons to bottom most Topics*/}
-                    <div className='flex justify-between flex-wrap px-4'>
-                        <p className='flex px-2 py-2 text-white' ><ListBulletIcon className='h-6 text-blue-400' /> Safe & Convenient Communication </p>
-                        <p className='flex px-3 py-2 text-white' ><PencilIcon className='h-6 text-blue-400' /> Bruin Oriented Leasing </p>
-                        <p className='flex px-2 py-2 text-white' ><ShieldCheckIcon className='h-6 text-blue-400' /> Transparency Guranteed </p>
+                    <div className='grid grid-cols-3 gap-4'>
+                        <div className='flex flex-col items-center'>
+                            <ListBulletIcon className='h-6 text-blue-400 mb-2' />
+                            <p className='text-white'>Safe Communication</p>
+                        </div>
+                        <div className='flex flex-col items-center'>
+                            <PencilIcon className='h-6 text-blue-400 mb-2' />
+                            <p className='text-white'>Bruin Oriented Leasing</p>
+                        </div>
+                        <div className='flex flex-col items-center'>
+                            <ShieldCheckIcon className='h-6 text-blue-400 mb-2' />
+                            <p className='text-white'>Transparency Guaranteed</p>
+                        </div>
                     </div>
                 </div>
 
