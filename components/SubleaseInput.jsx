@@ -89,7 +89,7 @@ const SubleaseInput = () => {
     document.getElementById("year").value = "";
     document.getElementById("beds").value = "";
     document.getElementById("baths").value = "";
-    document.getElementById("URL").value = "";
+    document.getElementById("imageURL").value = "";
     document.getElementById("roommates").value = "";
     document.getElementById("sqft").value = "";
   };
@@ -189,9 +189,9 @@ const SubleaseInput = () => {
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         type="text"
-        placeholder="2"
+        placeholder="Image URL"
         label="Image URL"
-        id="URL"
+        id="imageURL"
         required
         onChange={(event) => {
           setImageURL(event.target.value);

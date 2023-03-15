@@ -12,6 +12,7 @@ const navigation = [
   { name: "Add Sublease", href: "/add-sublease", current: false },
   { name: "Listings", href: "/listings", current: false },
   { name: "About", href: "/about", current: false },
+  { name: "Search", href: "/search", current: false },
 ];
 
 function classNames(...classes) {
