@@ -1,9 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import AmenityCard from "./AmenityCard";
-import ProfileInformation from "../login/ProfileInformation";
+import profile from "./profilepic.png";
 
-const Post = ({ title, image, poster, timeframe, description, amenities }) => {
+const Post = ({
+  title,
+  image,
+  poster,
+  timeframe,
+  description,
+  datePosted,
+  rent,
+  bed,
+  bath,
+  squareFeet,
+  roomates,
+  amenities,
+}) => {
   return (
     <div className="max-w-5xl py-10 mx-auto dark:text-gray-800 ">
       <div className="text-left font-semibold ml-0">
@@ -13,31 +26,85 @@ const Post = ({ title, image, poster, timeframe, description, amenities }) => {
           src={image}
           alt="cheeks"
           width={1000}
-          height={900}
-          className="mx-auto pb-10 drop-shadow-md opacity-90 transition duration-300 ease-in-out hover:opacity-100"
+          height={800}
+          className="mx-auto pb-8 drop-shadow-md opacity-90 transition duration-300 ease-in-out hover:opacity-100"
         />
-        <div className=" border-t dark:border-gray-500 "></div>
 
-        <div className="text-xl py-5 flex flex-row font-bold">
-          <h2 className="ml-0 mx-auto"> Subleaser: {poster} </h2>
-          <h2 className="mr-0 mx-auto"> Available: {timeframe}</h2>
+        <div className="text-2xl py-4 flex flex-row font-semibold">
+          <h2 className="ml-0 pr-3">
+            Sublease by {poster}
+            <p className="text-base text-gray-400 font-medium">
+              {" "}
+              Posted in {datePosted}
+            </p>
+          </h2>
+
+          <Image
+            src={profile}
+            width={60}
+            height={40}
+            alt="cheeks"
+            className="rounded-full"
+          ></Image>
+          <h2 className="mr-0 mx-auto"> Dates Available: {timeframe}</h2>
         </div>
 
-        <div className=" grid grid-cols-2">
-          <div>
-            <p className="text-left indent-5">{description}</p>
-          </div>
-          <div>
-            <AmenityCard
-              ac={amenities.ac}
-              pool={amenities.pool}
-              parking={amenities.parking}
-              laundry={amenities.laundry}
-              fitness={amenities.fitness}
-              wifi={amenities.wifi}
-            />
+        <div className=" border-t border-stone-600 py-5 "></div>
+
+        <div class=" bg-white border-solid border-2 border-slate-400 w-full p-4">
+          <div class="grid grid-cols-4 gap-8 divide-gray-400">
+            <div className="text-black border-r-2 border-slate-400 p-6">
+              Monthly Rent
+              <p className="font-medium text-stone-600">${rent}</p>
+            </div>
+            <div className="text-black border-r-2 border-slate-400 p-6">
+              Bed/Bath
+              <p className="font-medium text-stone-600">
+                {bed} bed/{bath} bath
+              </p>
+            </div>
+            <div className="text-black border-r-2 border-slate-400 p-6">
+              Square Feet
+              <p className="font-medium text-stone-600">{squareFeet} sq feet</p>
+            </div>
+            <div className="text-black border-slate-400 p-6">
+              Roomates
+              <p className="font-medium text-stone-600">{roomates}</p>
+            </div>
           </div>
         </div>
+        <br></br>
+
+        <h1 className="text-2xl font-semibold">
+          About {title}
+          <p className=" font-medium text-base pt-5 ">{description}</p>
+        </h1>
+        <br></br>
+
+        <h1 className="text-2xl font-semibold pb-3">Details and Fees</h1>
+
+        <div className="grid grid-cols-2 text-base  border-2  border-slate-400">
+          <div className="bg-slate-200 p-1">Utilities</div>
+          <div className="bg-slate-200 p-1"></div>
+          <div className="p-1"> Gas, Electricity, Water</div>
+          <div className="text-right pr-5 p-1"> $50/mo</div>
+          <div className="bg-slate-200 p-1">Parking</div>
+          <div className="bg-slate-200 p-1"></div>
+          <div className="p-1">1 Tandem Spot</div>
+          <div className="text-right pr-5 p-1"> $150/mo</div>
+        </div>
+        <br></br>
+
+        <h1 className="text-2xl font-semibold pb-3">Amenities</h1>
+
+        <AmenityCard
+          ac={amenities.ac}
+          pool={amenities.pool}
+          parking={amenities.parking}
+          laundry={amenities.laundry}
+          fitness={amenities.fitness}
+          wifi={amenities.wifi}
+        />
       </div>
     </div>
   );
