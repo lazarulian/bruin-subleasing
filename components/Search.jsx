@@ -25,7 +25,7 @@ const Search = () => {
       setInitials(
         data.docs
           .map((doc) => ({ ...doc.data(), id: doc.id }))
-          .map((initial) => initial.address)
+          .map((initial) => initial.streetname)
           .filter(onlyUnique)
       );
     };
@@ -43,7 +43,7 @@ const Search = () => {
     if (search != null) {
     const q = query(
       collection(db, "apartments"),
-      where("address", "==", search),
+      where("streetname", "==", search),
      // orderBy("year")
     );
     const data = await getDocs(q);
@@ -53,7 +53,7 @@ const Search = () => {
     setStartingMessage("");
     }
     else {
-        setErrorMessage("Please enter a valid address!");
+        setErrorMessage("Please enter a valid street name");
         setConfirmMessage(null);
         setStartingMessage("");
         setShow(false);

@@ -37,7 +37,7 @@ const SubleaseInput = () => {
   const [imageURL, setImageURL] = useState("");
   const [roommates, setRoommates] = useState(0);
   const [squarefootage, setSquareFootage] = useState(0);
-
+  const [streetName, setStreetName] = useState("");
   // Amenities
   const [ac, setAc] = useState(false);
   const [pool, setPool] = useState(false);
@@ -104,6 +104,7 @@ const SubleaseInput = () => {
       quarter: newQuarter,
       imageurl: imageURL,
       uid: currentUser.uid,
+      streetname: streetName,
       amenities: {
         ac: ac,
         pool: pool,
@@ -128,6 +129,8 @@ const SubleaseInput = () => {
         required
         onChange={(event) => {
           setNewAddress(event.target.value);
+          const array = event.target.value.split(" ");
+          setStreetName(array[1]);
         }}
       />
       <TextField
