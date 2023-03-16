@@ -1,6 +1,6 @@
 import { React, useState, useEffect, Fragment } from "react";
 import { db } from "../pages/api/firebase-config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import { UseAuth } from "@/context/AuthContext";
@@ -95,7 +95,8 @@ const SubleaseInput = () => {
   };
 
   const createApartment = async () => {
-    await addDoc(apartmentsCollectionRef, {
+    const docRef = doc(collection(db, "apartments"));
+    await setDoc(docRef, {
       address: newAddress,
       rent: parseInt(newRent),
       year: parseInt(newYear),
@@ -104,7 +105,11 @@ const SubleaseInput = () => {
       quarter: newQuarter,
       imageurl: imageURL,
       uid: currentUser.uid,
+
       streetname: streetName,
+
+      docid: docRef.id,
+
       amenities: {
         ac: ac,
         pool: pool,
