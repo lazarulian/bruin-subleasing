@@ -1,4 +1,5 @@
 import CardGrid from "@/components/CardGrid";
+import Search from "@/components/Search";
 
 export default function Listings() {
   return (
@@ -7,7 +8,9 @@ export default function Listings() {
         <h1 className="flex justify-center text-4xl font-semibold">Listings</h1>
         <p>Click on a listing to find more information.</p>
       </div>
-      <CardGrid />
+
+      <CardGrid/>
+      
     </div>
   );
 }

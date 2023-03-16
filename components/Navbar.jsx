@@ -75,6 +75,9 @@ const Navbar = () => {
         <Link href="/listings">
           <li className="p-4 border-b-2 border-zinc-300 w-full hover:underline">Listings</li>
         </Link>
+        <Link href="/search">
+          <li className="p-4 border-b-2 border-zinc-300 w-full hover:underline">Search</li>
+        </Link>
 
         <div className="flex flex-col my-4">
           {/*SignUp/Sign In buttons*/}

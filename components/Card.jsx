@@ -10,7 +10,7 @@ const Card = ({
   uid,
 }) => {
   return (
-    <div className="w-full h-75 rounded-lg shadow-md overflow-hidden">
+    <div className="w-full h-75 rounded-lg shadow-md overflow-hidden hover:scale-105">
       <img
         className="object-cover w-full h-full"
         src={imageUrl}

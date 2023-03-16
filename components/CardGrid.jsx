@@ -25,7 +25,7 @@ const CardGrid = () => {
     <div className="max-w-5xl mx-auto grid lg:grid-cols-4 grid-cols-1 gap-4 px-3">
       {apartments &&
         apartments.map((data, idx) => (
-          <div key={idx} className="relative">
+          <div key={idx} className="relative ">
             <Link href={`/users/${data.uid}`}>
               <Card
                 address={data.address}
