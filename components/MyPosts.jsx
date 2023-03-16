@@ -1,17 +1,10 @@
 import React from "react";
-import Card from "./Card";
+import DeleteCard from "./DeleteCard";
 import ProfileInformation from "./login/ProfileInformation";
 import { useState, useEffect } from "react";
 import { db } from "@/pages/api/firebase-config";
-import {
-  collection,
-  getDocs,
-  getDoc,
-  query,
-  where,
-  orderBy,
-  doc,
-} from "firebase/firestore";
+import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import { Delete } from "@mui/icons-material";
 
 const MyPosts = ({ uid }) => {
   const [apartments, setApartments] = useState([]);
@@ -45,17 +38,17 @@ const MyPosts = ({ uid }) => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <div className="flex justify-center py-5">
         <h1 className="text-black text-xl font-bold leading-tight tracking-tight  md:text-4xl dark:text-white">
           {userData && userData.firstname}&nbsp;{userData && userData.lastname}
           &apos;s Listings:
         </h1>
       </div>
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 gap-4">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-3 grid-cols-1 gap-5">
         {apartments.map((data, idx) => (
           <div key={idx} className="relative">
-            <Card
+            <DeleteCard
               address={data.address}
               bedrooms={data.beds}
               bathrooms={data.baths}
@@ -63,6 +56,8 @@ const MyPosts = ({ uid }) => {
               imageUrl={data.imageurl}
               season={`${data.quarter} ${data.year}`}
               slug={data.uid}
+              docid={data.docid}
+              uid={data.uid}
             />
           </div>
         ))}
