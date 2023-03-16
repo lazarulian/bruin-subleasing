@@ -1,11 +1,14 @@
-import SubleaseInput from "@/components/SubleaseInput"
-import Footer from "@/components/Footer"
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-export default function Home() {
-  return (
-    <div className="flex justify-center m-10">
-      <h1 className="text-3xl">CS35L Main Project - Initial Commit</h1> 
+function Home() {
+  const router = useRouter();
 
-    </div>
-  )
+  useEffect(() => {
+    router.replace('/homepage');
+  }, []);
+
+  return null;
 }
+
+export default Home;
