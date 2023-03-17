@@ -55,7 +55,7 @@ const Post = ({
               <p className="font-medium text-stone-600">{squareFeet} sq feet</p>
             </div>
             <div className="text-black border-slate-400 p-6">
-              Roomates
+              Roommates
               <p className="font-medium text-stone-600">{roomates}</p>
             </div>
           </div>

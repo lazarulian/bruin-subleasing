@@ -1,17 +1,10 @@
 import React from "react";
 
-const Card = ({
-  address,
-  bedrooms,
-  bathrooms,
-  price,
-  imageUrl,
-  season,
-}) => {
+const Card = ({ address, bedrooms, bathrooms, price, imageUrl, season }) => {
   return (
-    <div className="w-full h-75 rounded-lg shadow-md overflow-hidden hover:scale-105">
+    <div className="w-full h-75 rounded-lg shadow-md overflow-hidden hover:scale-105 duration-500">
       <img
-        className="object-cover w-full h-full"
+        className="object-cover w-full h-48"
         src={imageUrl}
         alt="Apartment"
       />
