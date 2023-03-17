@@ -1,11 +1,10 @@
 import { useEffect, useState, React } from "react";
 import { collection, addDoc, getDocs, orderBy, query, where } from "firebase/firestore";
-import Card from "@/components/Card";
+import Card from "@/components/card/Card";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControl from "@mui/material/FormControl";
 import { db } from "@/pages/api/firebase-config";
-import CardGrid from "@/components/CardGrid";
 import Link from "next/link";
 
 

@@ -1,5 +1,4 @@
-import CardGrid from "@/components/CardGrid";
-import Search from "@/components/Search";
+import CardGrid from "@/components/card/CardGrid";
 
 export default function Listings() {
   return (

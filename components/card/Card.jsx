@@ -7,7 +7,6 @@ const Card = ({
   price,
   imageUrl,
   season,
-  uid,
 }) => {
   return (
     <div className="w-full h-75 rounded-lg shadow-md overflow-hidden hover:scale-105">
