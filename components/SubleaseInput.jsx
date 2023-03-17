@@ -84,6 +84,7 @@ const SubleaseInput = () => {
     setImageURL("");
     setRoommates(0);
     setSquareFootage(0);
+    setSummary("");
     document.getElementById("apartment").value = "";
     document.getElementById("rent").value = "";
     document.getElementById("quarter").value = "";
@@ -93,6 +94,7 @@ const SubleaseInput = () => {
     document.getElementById("imageURL").value = "";
     document.getElementById("roommates").value = "";
     document.getElementById("sqft").value = "";
+    document.getElementById("summary").value = "";
   };
 
   const createApartment = async () => {
