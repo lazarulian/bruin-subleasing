@@ -2,6 +2,7 @@ import React from 'react'
 import {ArrowRightIcon, FlagIcon} from '@heroicons/react/24/solid'
 import{CpuChipIcon, MagnifyingGlassIcon} from '@heroicons/react/24/solid'
 import Image from "next/image";
+import Link from 'next/link';
 import supImg from '../public/static/images/supportpageimage.jpg'
 
 const Supportpage = () => {
@@ -31,7 +32,9 @@ const Supportpage = () => {
                         <p className='text-gray-600 text-xl'>Get In touch with our instagram! Follow Link Below</p>
                     </div>
                     <div className='bg-slate-100 pl-8 py-4'>
-                        <p className='flex items-center text-blue-500 hover:underline'>Our Socials<ArrowRightIcon className='w-5 ml-2 hover:underline'/></p>
+                        <Link href="https://www.instagram.com/" target="_blank">
+                            <p className='flex items-center text-blue-500 hover:underline'>Our Socials<ArrowRightIcon className='w-5 ml-2 hover:underline' /></p>
+                        </Link>
                     </div>
 
                 </div>
@@ -44,7 +47,9 @@ const Supportpage = () => {
                         <p className='text-gray-600 text-xl'>Need help? Contact bruinsubleasing@gmail.com</p>
                     </div>
                     <div className='bg-slate-100 pl-8 py-4'>
-                        <p className='flex items-center text-blue-500 hover:underline'>Contact Our Team<ArrowRightIcon className='w-5 ml-2 hover:underline'/></p>
+                        <Link href={`/contact`}>
+                            <p className='flex items-center text-blue-500 hover:underline'>Let Us Know<ArrowRightIcon className='w-5 ml-2 hover:underline'/></p>
+                        </Link>
                     </div>
 
                 </div>
@@ -57,7 +62,9 @@ const Supportpage = () => {
                         <p className='text-gray-600 text-xl'>Have a complaint? Contact: bruinsubreportcenter@gmail.com</p>
                     </div>
                     <div className='bg-slate-100 pl-8 py-4'>
-                        <p className='flex items-center text-blue-500 hover:underline'>Let Us Know<ArrowRightIcon className='w-5 ml-2 hover:underline'/></p>
+                        <Link href={`/contact`}>
+                            <p className='flex items-center text-blue-500 hover:underline'>Let Us Know<ArrowRightIcon className='w-5 ml-2 hover:underline'/></p>
+                        </Link>
                     </div>
 
                 </div>

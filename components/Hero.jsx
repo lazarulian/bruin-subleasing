@@ -5,6 +5,7 @@ import {
     PencilIcon
 } from '@heroicons/react/24/solid'
 import Image from "next/image";
+import Link from "next/link";
 import bigImage from '../public/static/images/uclahousing.jpeg'
 
 const Hero = () => {
@@ -15,7 +16,9 @@ const Hero = () => {
                     <p className ='text-2xl'>Subleasing Made Easy</p>
                     <h1 className='py-3 text-5xl md:text-7xl font-bold text-gray-900'>UCLA Bruin Subleasing</h1>
                     <p className='text-2xl'>Subleasing, Renting, All in One Place.</p>
-                    <button className='py-3 px-6 sm:w-[60%] my-4 text-white border bg-blue-500 border-blue-400 hover:bg-transparent hover:text-blue-400 rounded-md' >Get Started </button>
+                    <Link href={`/listings`}>
+                        <button className='py-3 px-6 sm:w-[60%] my-4 text-white border bg-blue-500 border-blue-400 hover:bg-transparent hover:text-blue-400 rounded-md' >Get Started </button>
+                    </Link>
                 </div>
 
                 {/*Image Div*/}
