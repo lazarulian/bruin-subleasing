@@ -1,8 +1,9 @@
-import React from 'react'
-import {CloudIcon, FlagIcon} from '@heroicons/react/24/solid'
-import{ShieldCheckIcon, AcademicCapIcon} from '@heroicons/react/24/solid'
+import React from 'react';
+import {CloudIcon, FlagIcon} from '@heroicons/react/24/solid';
+import{ShieldCheckIcon, AcademicCapIcon} from '@heroicons/react/24/solid';
 import Image from "next/image";
-import supImg from '../public/static/images/gaileyheights.jpg'
+import supImg from '../public/static/images/gaileyheights.jpg';
+import Footer from "@/components/Footer";
 
 function aboutpage () {
   return (
@@ -50,7 +51,6 @@ function aboutpage () {
                 </div>
 
             </div>
-
 
 
     </div>

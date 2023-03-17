@@ -11,10 +11,8 @@ const Supportpage = () => {
         <div className='w-full h=[700px] bg-gray-900/90 absolute'>
         <Image src={supImg} alt="/" className='w-full h-full object-cover mix-blend-overlay' />
         </div>
-
         {/* Support text overlapping the Support Image  */}
         <div className='max-w-[1240px] mx-auto text-white relative'>
-
             <div className='px-4 py-12'>
                 <h2 className='text-3xl pt-8 font-semibold text-yellow-400
                  uppercase text-center'>Support</h2>
@@ -67,7 +65,6 @@ const Supportpage = () => {
 
             </div>
         </div>
-    <Footer/>
     </div>
   )
 }
