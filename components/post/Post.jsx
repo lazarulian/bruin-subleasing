@@ -21,32 +21,19 @@ const Post = ({
     <div className="max-w-5xl py-10 mx-auto dark:text-gray-800 ">
       <div className="text-left font-semibold ml-0">
         <h1 className="text-5xl font-medium ml-0 pb-5">{title}</h1>
-
-        <Image
+        <img
           src={image}
-          alt="cheeks"
+          alt="Post Image"
           width={1000}
           height={800}
           className="mx-auto pb-8 drop-shadow-md opacity-90 transition duration-300 ease-in-out hover:opacity-100"
         />
 
         <div className="text-2xl py-4 flex flex-row font-semibold">
-          <h2 className="ml-0 pr-3">
-            Sublease by {poster}
-            <p className="text-base text-gray-400 font-medium">
-              {" "}
-              Posted in {datePosted}
-            </p>
+          <h2 className="ml-0 mx-auto">
+            {" "}
+            Dates Available: {timeframe} {datePosted}
           </h2>
-
-          <Image
-            src={profile}
-            width={60}
-            height={40}
-            alt="cheeks"
-            className="rounded-full"
-          ></Image>
-          <h2 className="mr-0 mx-auto"> Dates Available: {timeframe}</h2>
         </div>
 
         <div className=" border-t border-stone-600 py-5 "></div>
@@ -91,7 +78,7 @@ const Post = ({
           <div className="bg-slate-200 p-1">Parking</div>
           <div className="bg-slate-200 p-1"></div>
           <div className="p-1">1 Tandem Spot</div>
-          <div className="text-right pr-5 p-1"> $150/mo</div>
+          <div className="text-right pr-5 p-1"> $100/mo</div>
         </div>
         <br></br>
 

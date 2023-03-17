@@ -5,6 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { collection, addDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../pages/api/firebase-config";
 import { useState, Fragment } from "react";
+import Link from "next/link";
 import { UseAuth } from "@/context/AuthContext";
 
 const DeleteCard = ({
@@ -82,16 +83,22 @@ const DeleteCard = ({
           </div>
         </div>
         <div className="text-gray-400 text-sm mt-2 text-center">{season}</div>
-        {permissions && (
-          <div className="flex justify-center p-2">
+
+        <div className="flex justify-center p-2 space-x-2">
+          {permissions && (
             <button
               class="bg-transparent duration-500 hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
               onClick={handleDelete}
             >
               Delete
             </button>
-          </div>
-        )}
+          )}
+          <Link href={`/posts/${docid}`}>
+            <button class="bg-transparent duration-500 hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded">
+              View Post
+            </button>
+          </Link>
+        </div>
       </div>
       <Snackbar
         open={open}
