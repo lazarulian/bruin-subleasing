@@ -6,6 +6,8 @@ import { UseAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import { db } from "@/pages/api/firebase-config";
 import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import Image from "next/image";
+import logo from "public/static/images/uclalogo4.png";
 
 const navigation = [
   { name: "Home", href: "/homepage", current: false },
@@ -63,16 +65,8 @@ export default function NavUpdated() {
                   className="flex flex-shrink-0 items-center"
                   href="/homepage"
                 >
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  <Image src={logo} alt="/" className="block h-8 w-auto"/>
+          
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
