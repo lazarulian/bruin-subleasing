@@ -109,6 +109,7 @@ const SubleaseInput = () => {
       streetname: streetName,
       summary: summary,
       sqft: squarefootage,
+      roommates: roommates,
 
       docid: docRef.id,
 
