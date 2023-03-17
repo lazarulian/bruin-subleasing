@@ -63,7 +63,7 @@ const DeleteCard = ({
   return (
     <div className="w-full h-75 rounded-lg shadow-md overflow-hidden hover:scale-105 duration-300">
       <img
-        className="object-cover w-full h-full"
+        className="object-cover w-full h-48"
         src={imageUrl}
         alt="Apartment"
       />
