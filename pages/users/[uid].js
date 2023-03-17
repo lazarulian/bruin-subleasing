@@ -4,7 +4,7 @@ import MyPosts from "@/components/MyPosts";
 function userPosts() {
   const router = useRouter();
   return (
-    <section className="dark:bg-gray-900 h-screen">
+    <section className="h-screen">
       <div className="mx-auto mb-5 py-5">
         <MyPosts uid={router.query.uid} />
       </div>
