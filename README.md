@@ -108,6 +108,14 @@ You will now see a series of all of the listings currently posted to our platfor
 
 Alternatively, you could navigate to the `Search` button at the top navigation bar where you will find the ability to search for a specific listing you may have heard about.
 
+## Contact us
+
+If you have any questions, comments, or concerns, please feel free to contact us. You can reach us by filling out the contact form on our website. You can access our contact form by navigating to `/contact` or by clicking the `contact` button on the navbar at the top.
+
+Simply fill out the form with your name, email, and message. Once you click the "Submit" button, your message will be sent to our team.
+
+Thank you for your interest in our product, and we look forward to hearing from you!
+
 ## Page overviews
 
 ### Home
