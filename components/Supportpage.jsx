@@ -3,7 +3,6 @@ import {ArrowRightIcon, FlagIcon} from '@heroicons/react/24/solid'
 import{CpuChipIcon, MagnifyingGlassIcon} from '@heroicons/react/24/solid'
 import Image from "next/image";
 import supImg from '../public/static/images/supportpageimage.jpg'
-import Footer from "@/components/Footer"
 
 const Supportpage = () => {
   return (

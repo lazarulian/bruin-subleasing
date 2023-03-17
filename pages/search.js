@@ -1,4 +1,4 @@
-import CardGrid from "@/components/CardGrid";
+import CardGrid from "@/components/card/CardGrid";
 import Search from "@/components/Search";
 
 const search = () => {

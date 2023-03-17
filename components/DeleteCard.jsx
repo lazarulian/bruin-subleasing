@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { collection, addDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../pages/api/firebase-config";
 import { useState, Fragment } from "react";
 import Link from "next/link";
