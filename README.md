@@ -1,6 +1,6 @@
 # Bruin-Subleasing
 
-Bruin-Subleasing is a web application that connects UCLA students and community members for subleasing opportunities. Users can register, create, and browse sublease listings, simplifying the process of finding temporary housing options around campus.
+Bruin-Subleasing is a web application that connects UCLA students and community members for subleasing opportunities. Users can register, create, and browse sublease listings, simplifying the process of finding temporary housing options around campus. Our presentation for the project is located at `"Bruin Subleasing Presentation"` and `"CS35L Final Report"`
 
 ## Prerequisites
 
