@@ -1,7 +1,6 @@
 import React from "react";
 import { UseAuth } from "@/context/AuthContext";
 import app_routes from "@/data/app_routes";
-import LoginRegister from "./LoginRegister";
 
 const isBrowser = () => typeof window !== "undefined";
 
