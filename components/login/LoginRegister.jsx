@@ -6,7 +6,7 @@ import LoginForm from "./LoginForm";
 
 const LoginRegister = () => {
   return (
-    <section className="bg-gray-900 h-screen">
+    <section className="h-screen">
       <div className="mx-auto py-10 px-2">
         <div className="text-center pb-5">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
