@@ -53,7 +53,7 @@ const Search = () => {
     setStartingMessage("");
     }
     else {
-        setErrorMessage("Please enter a valid street name");
+        setErrorMessage("Please enter a valid street name!");
         setConfirmMessage(null);
         setStartingMessage("");
         setShow(false);

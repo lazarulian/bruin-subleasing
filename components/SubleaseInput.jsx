@@ -38,6 +38,7 @@ const SubleaseInput = () => {
   const [roommates, setRoommates] = useState(0);
   const [squarefootage, setSquareFootage] = useState(0);
   const [streetName, setStreetName] = useState("");
+  const [summary, setSummary] = useState("");
   // Amenities
   const [ac, setAc] = useState(false);
   const [pool, setPool] = useState(false);
@@ -105,8 +106,9 @@ const SubleaseInput = () => {
       quarter: newQuarter,
       imageurl: imageURL,
       uid: currentUser.uid,
-
       streetname: streetName,
+      summary: summary,
+      sqft: squarefootage,
 
       docid: docRef.id,
 
@@ -124,7 +126,7 @@ const SubleaseInput = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 p-8 m-3  rounded-lg gap-3">
+    <div className="grid grid-cols-1 p-8 m-3 rounded-lg gap-3">
       <TextField
         className="rounded-lg border-2 border-blue-400 p-2 m-1"
         placeholder="558 Glenrock Ave"
@@ -227,6 +229,19 @@ const SubleaseInput = () => {
           setRoommates(event.target.value);
         }}
       />
+
+     <TextField
+        className="rounded-lg border-2 border-blue-400 p-2 m-1"
+        type="text"
+        placeholder="Summary"
+        label="Summary"
+        id="summary"
+        required
+        onChange={(event) => {
+          setSummary(event.target.value);
+        }}
+      />
+
       <div className="flex justify-center">
         <Checkbox
           icon={<AcUnitIconBorder />}

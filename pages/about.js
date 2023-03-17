@@ -6,8 +6,8 @@ import supImg from '../public/static/images/gaileyheights.jpg'
 
 function about () {
   return (
-    <div className='w-full h-full mt-3'>
-        <div className='w-screen h=screen absolute'>
+    <div className='w-full h-full'>
+        <div className='w-screen h-screen absolute'>
         <Image src={supImg} alt="/" className='w-screen h-screen object-cover mix-blend-overlay' />
         </div>
 
